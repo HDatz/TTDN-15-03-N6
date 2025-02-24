@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- Tree View -->
+        <record id="view_work_log_tree" model="ir.ui.view">
+            <field name="name">work.log.tree</field>
+            <field name="model">work.log</field>
+            <field name="arch" type="xml">
+                <tree string="Work Logs">
+                    <field name="task_id"/>
+                    <field name="user_id"/>
+                    <field name="work_date"/>
+                    <field name="duration"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action -->
+        <record id="action_work_log" model="ir.actions.act_window">
+            <field name="name">Work Logs</field>
+            <field name="res_model">work.log</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

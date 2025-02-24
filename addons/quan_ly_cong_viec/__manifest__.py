@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nhan_su",
+    'name': "quan_ly_cong_viec",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -25,13 +25,17 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/nhan_vien.xml',
-        'views/chuc_vu.xml',
-        'views/phong_ban.xml',
+        'views/project_team_view.xml',
+        'views/project_view.xml',
+        'views/task_stage_view.xml',
+        'views/task_view.xml',
+        'views/work_log_view.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    
+    'icon': '/quan_ly_cong_viec/static/description/image.png',
 }

@@ -1,45 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <record id="view_nhan_vien_form" model="ir.ui.view">
-            <field name="name">nhan_vien</field>
+       <record id="view_nhan_vien_form" model="ir.ui.view">
+            <field name="name">nhan_vien.form</field>
             <field name="model">nhan_vien</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
                         <div class="oe_read_only" style="font-size:25px">Nhân viên</div>
                         <group col="4" string="Thông tin chung">
-                            <field name="ma_dinh_danh"/>
-                            <field name="ngay_sinh"/>
-                            <field name="que_quan"/>
-                            <field name="email"/>
+                            <field name="name"/> <!-- Họ và tên -->
+                            <field name="ma_dinh_danh"/> <!-- Mã định danh -->
+                            <field name="ngay_sinh"/> <!-- Ngày sinh -->
+                            <field name="que_quan"/> <!-- Quê quán -->
+                            <field name="email"/> <!-- Email -->
+                            <field name="so_dien_thoai"/> <!-- Số điện thoại -->
                         </group>
                     </sheet>
                 </form>
             </field>
         </record>
 
+        <!-- Tree view cho danh sách nhân viên -->
         <record id="view_nhan_vien_tree" model="ir.ui.view">
-            <field name="name">nhan_vien</field>
+            <field name="name">nhan_vien.tree</field>
             <field name="model">nhan_vien</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="ma_dinh_danh"/>
-                    <field name="ngay_sinh"/>
-                    <field name="que_quan"/>
-                    <field name="email"/>
+                    <field name="name"/> <!-- Họ và tên -->
+                    <field name="ma_dinh_danh"/> <!-- Mã định danh -->
+                    <field name="ngay_sinh"/> <!-- Ngày sinh -->
+                    <field name="que_quan"/> <!-- Quê quán -->
+                    <field name="email"/> <!-- Email -->
                 </tree>
             </field>
         </record>
 
+        <!-- Search view cho nhân viên -->
         <record model="ir.ui.view" id="nhan_vien_search">
+            <field name="name">nhan_vien.search</field>
             <field name="model">nhan_vien</field>
             <field name="arch" type="xml">
                 <search>
-                    <field name="ma_dinh_danh"/>
-                    <field name="ngay_sinh"/>
-                    <field name="que_quan"/>
-                    <field name="email"/>
+                    <field name="name"/> <!-- Họ và tên -->
+                    <field name="ma_dinh_danh"/> <!-- Mã định danh -->
+                    <field name="ngay_sinh"/> <!-- Ngày sinh -->
+                    <field name="que_quan"/> <!-- Quê quán -->
+                    <field name="email"/> <!-- Email -->
                 </search>
             </field>
         </record>
@@ -48,7 +55,7 @@
             <field name="name">Nhân viên</field>
             <field name="res_model">nhan_vien</field>
             <field name="view_mode">tree,form</field>
-            <field name="search_view_id" ref = "nhan_vien_search"/>
+            <field name="search_view_id" ref="nhan_vien_search"/>
         </record>
     </data>
 </odoo>

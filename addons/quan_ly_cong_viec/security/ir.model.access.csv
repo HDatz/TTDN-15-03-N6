@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_project_management,access.project.management,model_project_management,,1,1,1,1
+access_project_team,access.project.team,model_project_team,,1,1,1,1
+access_project_task,access.project.task,model_project_task,,1,1,1,1
+access_task_stage,access.task.stage,model_task_stage,,1,1,1,1
+access_work_log,access.work.log,model_work_log,,1,1,1,1

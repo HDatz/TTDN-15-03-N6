@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <menuitem
+            id="menu_root"
+            name="QLCV"
+            sequence="0"/>
+          
+        <menuitem name="Quản lý Project" 
+            id="menu_project_team" 
+            parent="menu_root" 
+            sequence="1"
+            action="action_project_team"
+        />
+
+        <menuitem name="Project" 
+            id="menu_project" 
+            parent="menu_root" 
+            sequence="2"
+            action="action_project"
+        />
+        <menuitem name="Vị Trí Nhiệm Vụ" 
+            id="menu_task_stage" 
+            parent="menu_root" 
+            sequence="3"
+            action="action_task_stage"
+        />
+        <menuitem name="Nhiệm Vụ" 
+            id="menu_task" 
+            parent="menu_root" 
+            sequence="4"
+            action="action_task"
+        />
+        <menuitem name="Nhật Ký Công Việc" 
+            id="menu_worklog" 
+            parent="menu_root" 
+            sequence="5"
+            action="action_work_log"
+        />
+    </data>
+</odoo>
