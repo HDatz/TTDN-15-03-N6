@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_cong_viec_tree" model="ir.ui.view">
+        <field name="name">cong_viec.tree</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <tree string="Công Việc Dự Án">
+                <field name="ten_cong_viec" string="Tên Công Việc"/>
+                <field name="du_an_id" string="Dự Án"/>
+                <field name="nhan_vien_id" string="Người Phụ Trách"/>
+                <field name="han_chot" string="Hạn Chót" widget="date"/>
+                <field name="giai_doan_id" string="Giai Đoạn"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_cong_viec_form" model="ir.ui.view">
+        <field name="name">cong_viec.form</field>
+        <field name="model">cong_viec</field>
+        <field name="arch" type="xml">
+            <form string="Công Việc Dự Án">
+                <sheet>
+                    <group>
+                        <field name="ten_cong_viec" string="Tên Công Việc"/>
+                        <field name="du_an_id" string="Dự Án"/>
+                        <field name="nhan_vien_id" string="Người Phụ Trách"/>
+                               <!-- domain="[('id', 'in', du_an_id.nhom_du_an_ids.thanh_vien_ids)]"/> -->
+                        <field name="han_chot" string="Hạn Chót" widget="date"/>
+                        <field name="giai_doan_id" string="Giai Đoạn"/>
+                    </group>
+                    <group>
+                        <field name="mo_ta" string="Mô Tả Công Việc" colspan="2" widget="html"/>
+                    </group>
+                    <notebook>
+                        <page string="Nhật Ký Công Việc">
+                            <field name="nhat_ky_cong_viec_ids">
+                                <tree string="Nhật Ký Công Việc">
+                                    <field name="ngay_thuc_hien" string="Ngày Thực Hiện"/>
+                                    <field name="nhan_vien_id" string="Người Thực Hiện"/>
+                                    <field name="thoi_gian" string="Thời Gian"/>
+                                    <field name="mo_ta" string="Mô Tả"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_cong_viec" model="ir.actions.act_window">
+        <field name="name">Công Việc Dự Án</field>
+        <field name="res_model">cong_viec</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

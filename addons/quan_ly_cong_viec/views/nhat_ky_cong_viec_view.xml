@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_nhat_ky_tree" model="ir.ui.view">
+        <field name="name">nhatkycongviec.tree</field>
+        <field name="model">nhat_ky_cong_viec</field>
+        <field name="arch" type="xml">
+            <tree string="Nhật Ký Công Việc">
+                <field name="cong_viec_id"/>
+                <field name="ngay_thuc_hien"/>
+                <field name="nhan_vien_id"/>  
+                <field name="thoi_gian"/>
+                <field name="mo_ta"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form View cho Nhật Ký Công Việc -->
+    <record id="view_nhat_ky_form" model="ir.ui.view">
+        <field name="name">nhatkycongviec.form</field>
+        <field name="model">nhat_ky_cong_viec</field>
+        <field name="arch" type="xml">
+            <form string="Nhật Ký Công Việc">
+                <sheet>
+                    <group>
+                        <field name="cong_viec_id"/>
+                        <field name="ngay_thuc_hien"/>
+                        <field name="nhan_vien_id"/>  
+                        <field name="thoi_gian"/>
+                        <field name="mo_ta"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Search View cho Nhật Ký Công Việc -->
+    <record id="view_nhat_ky_search" model="ir.ui.view">
+        <field name="name">nhatkycongviec.search</field>
+        <field name="model">nhat_ky_cong_viec</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="cong_viec_id"/>
+                <field name="nhan_vien_id"/>
+                <field name="ngay_thuc_hien"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action cho Nhật Ký Công Việc -->
+    <record id="action_nhat_ky" model="ir.actions.act_window">
+        <field name="name">Nhật Ký Công Việc</field>
+        <field name="res_model">nhat_ky_cong_viec</field>
+        <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_nhat_ky_search"/>
+    </record>
+</odoo>

@@ -25,11 +25,13 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/project_team_view.xml',
-        'views/project_view.xml',
-        'views/task_stage_view.xml',
-        'views/task_view.xml',
-        'views/work_log_view.xml',
+        'views/nhom_du_an_view.xml',
+        'views/nhan_vien_view.xml',
+        'views/lich_su_lam_viec_view.xml',
+        'views/du_an_view.xml',
+        'views/giai_doan_cong_viec_view.xml',
+        'views/cong_viec_view.xml',
+        'views/nhat_ky_cong_viec_view.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

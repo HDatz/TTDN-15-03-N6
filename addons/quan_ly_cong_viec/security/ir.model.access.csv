@@ -1,7 +1,8 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-
-access_project_management,access.project.management,model_project_management,,1,1,1,1
-access_project_team,access.project.team,model_project_team,,1,1,1,1
-access_project_task,access.project.task,model_project_task,,1,1,1,1
-access_task_stage,access.task.stage,model_task_stage,,1,1,1,1
-access_work_log,access.work.log,model_work_log,,1,1,1,1
+access_nhom_du_an,nhom_du_an.nhom_du_an,model_nhom_du_an,base.group_user,1,1,1,1
+access_du_an,du_an.du_an,model_du_an,base.group_user,1,1,1,1
+access_giai_doan_cong_viec,giai_doan_cong_viec.giai_doan_cong_viec,model_giai_doan_cong_viec,base.group_user,1,1,1,1
+access_cong_viec,cong_viec.cong_viec,model_cong_viec,base.group_user,1,1,1,1
+access_nhat_ky_cong_viec,nhat_ky_cong_viec.nhat_ky_cong_viec,model_nhat_ky_cong_viec,base.group_user,1,1,1,1
+access_nhan_vien,nhan_vien.nhan_vien,model_nhan_vien,base.group_user,1,1,1,1
+access_lich_su_lam_viec,lich_su_lam_viec.lich_su_lam_viec,model_lich_su_lam_viec,base.group_user,1,1,1,1
