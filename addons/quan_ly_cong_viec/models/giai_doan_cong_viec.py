@@ -5,4 +5,4 @@ class GiaiDoanCongViec(models.Model):
     _description = 'Giai Đoạn Công Việc'
 
     ten_giai_doan = fields.Char(string='Tên Giai Đoạn', required=True)
-    thu_tu = fields.Integer(string='Thứ Tự', default=10)
+    thu_tu = fields.Integer(string='Thứ Tự')

@@ -5,7 +5,7 @@
         <field name="name">view.nhom.du.an.tree</field>
         <field name="model">nhom_du_an</field>
         <field name="arch" type="xml">
-            <tree string="Nhóm Dự Án">
+            <tree string="Các Nhóm">
                 <field name="ten_nhom"/>
                 <field name="nhan_vien_ids"/>  <!-- Đã sửa cho khớp -->
             </tree>
@@ -17,7 +17,7 @@
         <field name="name">view.nhom.du.an.form</field>
         <field name="model">nhom_du_an</field>
         <field name="arch" type="xml">
-            <form string="Nhóm Dự Án">
+            <form string="Các Nhóm">
                 <sheet>
                     <group>
                         <field name="ten_nhom"/>
@@ -42,7 +42,7 @@
 
     <!-- Action cho Nhóm Dự Án -->
     <record id="action_nhom_du_an" model="ir.actions.act_window">
-        <field name="name">Nhóm Dự Án</field>
+        <field name="name">Các Nhóm</field>
         <field name="res_model">nhom_du_an</field>
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="view_nhom_du_an_search"/>

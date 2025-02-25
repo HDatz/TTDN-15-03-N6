@@ -22,8 +22,10 @@ class NhanVien(models.Model):
         for record in self:
             record.ho_va_ten = f"{record.ho_ten_dem} {record.ten}".strip()
 
-    @api.onchange("ten")
+    @api.onchange("ten", "ho_ten_dem")
     def _onchange_tinh_ma_dinh_danh(self):
         for record in self:
-            if record.ten:
-                record.ma_dinh_danh = record.ten.upper()
+            if record.ho_ten_dem and record.ten:
+                record.ma_dinh_danh = f"{record.ho_ten_dem} {record.ten}".upper()
+            else:
+                record.ma_dinh_danh = False
