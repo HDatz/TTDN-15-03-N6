@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-
     <record id="view_nhan_vien_tree" model="ir.ui.view">
         <field name="name">view.nhan.vien.tree</field>
         <field name="model">nhan_vien</field>
@@ -10,6 +9,8 @@
                 <field name="ho_va_ten"/>
                 <field name="ngay_sinh"/>
                 <field name="email"/>
+                <field name="gioi_tinh"/>
+                <field name="chuc_vu_id"/>
                 <field name="so_dien_thoai"/>
                 <field name="que_quan"/>
                 <field name="nhom_du_an_ids" widget="many2many_tags"/>
@@ -29,11 +30,13 @@
                             <field name="ho_ten_dem"/>
                             <field name="ten"/>
                             <field name="ho_va_ten" readonly="1"/>
+                            <field name="chuc_vu_id"/>
                         </group>
                         <group>
                             <field name="ngay_sinh"/>
                             <field name="que_quan"/>
                             <field name="email"/>
+                            <field name="gioi_tinh"/>
                             <field name="so_dien_thoai"/>
                         </group>
                     </group>
@@ -42,7 +45,6 @@
                             <field name="lich_su_lam_viec_ids">
                                 <tree>
                                     <field name="ten_lich_su"/>
-                                    <field name="cong_viec_id"/>
                                 </tree>
                             </field>
                         </page>
@@ -63,9 +65,15 @@
                 <field name="ma_dinh_danh"/>
                 <field name="ho_va_ten"/>
                 <field name="email"/>
+                <field name="chuc_vu_id"/>
                 <field name="so_dien_thoai"/>
                 <field name="nhom_du_an_ids"/>
             </search>
+            <searchpanel>
+                <field name="chuc_vu_id" select="multi"/>
+                <field name="gioi_tinh" select="single"/>
+                <field name="nhom_du_an_ids" select="multi"/>
+            </searchpanel>
         </field>
     </record>
 
@@ -75,5 +83,4 @@
         <field name="view_mode">tree,form</field>
         <field name="search_view_id" ref="view_nhan_vien_search"/>
     </record>
-
 </odoo>

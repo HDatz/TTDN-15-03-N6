@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "quan_ly_cong_viec",
+    'name': "quan_ly_nhan_su",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -20,21 +20,19 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','quan_ly_nhan_su'],
+    'depends': ['base'],
 
     # always loaded
     'data': [
         'security/ir.model.access.csv',
-        'views/du_an_view.xml',
-        'views/giai_doan_cong_viec_view.xml',
-        'views/cong_viec_view.xml',
-        'views/nhat_ky_cong_viec_view.xml',
+        'views/chuc_vu.xml',
+        'views/nhom_du_an_view.xml',
+        'views/nhan_vien_view.xml',
+        'views/lich_su_lam_viec_view.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
-    
-    'icon': '/quan_ly_cong_viec/static/description/image.png',
 }

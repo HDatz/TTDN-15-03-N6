@@ -5,10 +5,17 @@ class NhanVien(models.Model):
     _description = 'Bảng chứa thông tin nhân viên'
     _rec_name = 'ho_va_ten'
 
-    ma_dinh_danh = fields.Char("Mã Định Danh", required=True, index=True)
+    ma_dinh_danh = fields.Char("Mã Định Danh")
     ngay_sinh = fields.Date("Ngày Sinh")  
     que_quan = fields.Char("Quê Quán")  
     email = fields.Char("Email") 
+    gioi_tinh = fields.Selection(
+        selection=[
+            ('nam','Nam'),
+            ('nu', 'Nữ'),
+        ], 
+        string="Giới Tính"
+    )
     so_dien_thoai = fields.Char("Số Điện Thoại")  
     lich_su_lam_viec_ids = fields.One2many('lich_su_lam_viec', 'nhan_vien_id', string="Lịch Sử Làm Việc")
     nhom_du_an_ids = fields.Many2many('nhom_du_an', string='Nhóm Dự Án')
@@ -16,16 +23,23 @@ class NhanVien(models.Model):
     ho_va_ten = fields.Char("Họ và Tên", compute='_tinh_ho_va_ten', store=True)
     ho_ten_dem = fields.Char("Họ Tên Đệm")
     ten = fields.Char("Tên")
+    chuc_vu_id = fields.Many2one("chuc_vu", string="Chức vụ", ondelete="set null")    
+    _sql_constraints = [
+        ('unique_email', 'UNIQUE(email)', 'Email đã tồn tại, vui lòng chọn email khác!')
+    ]
+
 
     @api.depends("ho_ten_dem", "ten")
     def _tinh_ho_va_ten(self):
         for record in self:
-            record.ho_va_ten = f"{record.ho_ten_dem} {record.ten}".strip()
+            if record.ho_ten_dem and record.ten:
+                record.ho_va_ten = f"{record.ho_ten_dem} {record.ten}".strip()
 
     @api.onchange("ten", "ho_ten_dem")
     def _onchange_tinh_ma_dinh_danh(self):
         for record in self:
             if record.ho_ten_dem and record.ten:
-                record.ma_dinh_danh = f"{record.ho_ten_dem} {record.ten}".upper()
+                chu_cai_dau = ''.join([tu[0][0] for tu in record.ho_ten_dem.lower().split()])
+                record.ma_dinh_danh = record.ten.lower() + chu_cai_dau
             else:
                 record.ma_dinh_danh = False

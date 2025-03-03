@@ -3,6 +3,7 @@ from odoo import models, fields
 class DuAn(models.Model):
     _name = 'du_an'
     _description = 'Dự Án'
+    _rec_name = 'ten_du_an'
 
     ten_du_an = fields.Char(string='Tên Dự Án', required=True)
     mo_ta = fields.Text(string='Mô Tả')

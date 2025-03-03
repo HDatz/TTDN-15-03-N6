@@ -7,20 +7,12 @@
             name="Quản Lý Công Việc"
             sequence="0"/>
 
-        <!-- Menu Nhóm Dự Án -->
-        <menuitem
-            id="menu_nhom_du_an"
-            name="Nhóm Nhân Viên"
-            parent="menu_root_duan"
-            sequence="1"
-            action="action_nhom_du_an"/>
-
         <!-- Menu Dự Án -->
         <menuitem
             id="menu_du_an"
             name="Dự Án"
             parent="menu_root_duan"
-            sequence="2"
+            sequence="1"
             action="action_du_an"/>
 
         <!-- Menu Giai Đoạn Công Việc -->
@@ -28,35 +20,22 @@
             id="menu_giai_doan_cong_viec"
             name="Giai Đoạn Làm Việc"
             parent="menu_root_duan"
-            sequence="3"
+            sequence="2"
             action="action_giai_doan_cong_viec"/>
 
         <menuitem
             id="menu_cong_viec"
             name="Công Việc"
             parent="menu_root_duan"
-            sequence="4"
+            sequence="3"
             action="action_cong_viec"/>
 
         <menuitem
             id="menu_nhat_ky"
             name="Nhật Ký Công Việc"
             parent="menu_root_duan"
-            sequence="5"
+            sequence="4"
             action="action_nhat_ky"/> 
 
-        <menuitem
-            id="menu_lich_su_lam_viec"
-            name="Lịch Sử Làm Việc"
-            parent="menu_root_duan"
-            sequence="6"
-            action="action_lich_su_lam_viec"/>
-
-        <menuitem
-            id="menu_nhan_vien"
-            name="Nhân Viên"
-            parent="menu_root_duan"
-            sequence="7"
-            action="action_nhan_vien"/>
     </data>
 </odoo>

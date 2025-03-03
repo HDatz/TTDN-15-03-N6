@@ -6,6 +6,7 @@
         <field name="arch" type="xml">
             <tree string="Nhật Ký Công Việc">
                 <field name="cong_viec_id"/>
+                <field name="ten_du_an"/>
                 <field name="ngay_thuc_hien"/>
                 <field name="nhan_vien_id"/>  
                 <field name="thoi_gian"/>
@@ -23,6 +24,7 @@
                 <sheet>
                     <group>
                         <field name="cong_viec_id"/>
+                        <field name="ten_du_an"/>
                         <field name="ngay_thuc_hien"/>
                         <field name="nhan_vien_id"/>  
                         <field name="thoi_gian"/>
@@ -43,6 +45,10 @@
                 <field name="nhan_vien_id"/>
                 <field name="ngay_thuc_hien"/>
             </search>
+            <searchpanel>
+                <field name="du_an_id" select="multi"/>
+                <field name="nhan_vien_id" select="multi"/>
+            </searchpanel>
         </field>
     </record>
 

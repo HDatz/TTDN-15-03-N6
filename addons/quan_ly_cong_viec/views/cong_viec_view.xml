@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Tree View -->
     <record id="view_cong_viec_tree" model="ir.ui.view">
         <field name="name">cong_viec.tree</field>
         <field name="model">cong_viec</field>
@@ -20,13 +19,12 @@
         <field name="name">cong_viec.form</field>
         <field name="model">cong_viec</field>
         <field name="arch" type="xml">
-            <form string="Công Việc Dự Án">
+            <form string="Công Việc Của Nhân Viên">
                 <sheet>
                     <group>
                         <field name="ten_cong_viec" string="Tên Công Việc"/>
                         <field name="du_an_id" string="Dự Án"/>
                         <field name="nhan_vien_id" string="Người Phụ Trách"/>
-                               <!-- domain="[('id', 'in', du_an_id.nhom_du_an_ids.thanh_vien_ids)]"/> -->
                         <field name="han_chot" string="Hạn Chót" widget="date"/>
                         <field name="giai_doan_id" string="Giai Đoạn"/>
                     </group>
@@ -52,7 +50,7 @@
 
     <!-- Action -->
     <record id="action_cong_viec" model="ir.actions.act_window">
-        <field name="name">Công Việc Dự Án</field>
+        <field name="name">Công Việc Của Nhân Viên</field>
         <field name="res_model">cong_viec</field>
         <field name="view_mode">tree,form</field>
     </record>
