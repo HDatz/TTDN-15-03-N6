@@ -29,6 +29,8 @@
         'views/giai_doan_cong_viec_view.xml',
         'views/cong_viec_view.xml',
         'views/nhat_ky_cong_viec_view.xml',
+        'views/tai_nguyen.xml',
+        'views/danh_gia_nhan_vien_view.xml',
         'views/menu.xml',
     ],
     # only loaded in demonstration mode

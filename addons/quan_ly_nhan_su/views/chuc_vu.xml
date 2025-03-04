@@ -9,12 +9,7 @@
                 <tree string="Danh sách Chức vụ">
                     <field name="ten_chuc_vu"/>
                     <field name="mo_ta"/>
-                    <field name="nhan_vien_ids">
-                        <tree>
-                            <field name="ho_va_ten"/>
-                            <field name="email"/>
-                        </tree>
-                    </field>
+                    <field name="nhan_vien_ids" widget="many2many_tags"/>
                 </tree>
             </field>
         </record>
@@ -29,12 +24,12 @@
                         <group>
                             <field name="ten_chuc_vu"/>
                             <field name="mo_ta"/>
-                            <field name="nhan_vien_ids">
-                                <tree>
+                            <field name="nhan_vien_ids" widget="many2many_tags"/>
+                                <!-- <tree>
                                     <field name="ho_va_ten"/>
                                     <field name="email"/>
-                                </tree>
-                            </field>
+                                </tree> -->
+                            <!-- </field> -->
                         </group>
                     </sheet>
                 </form>

@@ -20,7 +20,7 @@
             id="menu_giai_doan_cong_viec"
             name="Giai Đoạn Làm Việc"
             parent="menu_root_duan"
-            sequence="2"
+            sequence="6"
             action="action_giai_doan_cong_viec"/>
 
         <menuitem
@@ -36,6 +36,21 @@
             parent="menu_root_duan"
             sequence="4"
             action="action_nhat_ky"/> 
+
+        <menuitem
+            id="menu_tai_nguyen"
+            name="Tài Nguyên Dự Án"
+            parent="menu_root_duan"
+            sequence="2"
+            action="action_tai_nguyen"/> 
+        
+        <menuitem
+            id="menu_danh_gia_nhan_vien"
+            name="Đánh Giá Nhân Viên"
+            parent="menu_root_duan"
+            sequence="5"
+            action="action_danh_gia_nhan_vien"/> 
+        
 
     </data>
 </odoo>

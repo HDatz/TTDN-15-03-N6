@@ -19,6 +19,10 @@ class NhanVien(models.Model):
     so_dien_thoai = fields.Char("Số Điện Thoại")  
     lich_su_lam_viec_ids = fields.One2many('lich_su_lam_viec', 'nhan_vien_id', string="Lịch Sử Làm Việc")
     nhom_du_an_ids = fields.Many2many('nhom_du_an', string='Nhóm Dự Án')
+    
+    du_an_ids = fields.Many2many('du_an', 'nhan_vien_du_an_rel', 'nhan_vien_id', 'du_an_id', string='Dự Án Đang Tham Gia')
+
+    cong_viec_ids = fields.Many2many('cong_viec', 'nhan_vien_cong_viec_rel', 'nhan_vien_id', 'cong_viec_id', string='Công Việc Tham Gia')
 
     ho_va_ten = fields.Char("Họ và Tên", compute='_tinh_ho_va_ten', store=True)
     ho_ten_dem = fields.Char("Họ Tên Đệm")

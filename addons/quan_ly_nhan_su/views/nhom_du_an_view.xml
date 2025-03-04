@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <tree string="Các Nhóm">
                 <field name="ten_nhom"/>
-                <field name="nhan_vien_ids"/>  <!-- Đã sửa cho khớp -->
+                <field name="nhan_vien_ids" widget="many2many_tags"/>
             </tree>
         </field>
     </record>

@@ -4,55 +4,65 @@
         <field name="name">nhatkycongviec.tree</field>
         <field name="model">nhat_ky_cong_viec</field>
         <field name="arch" type="xml">
-            <tree string="Nhật Ký Công Việc">
+            <tree string="Nhật Ký Công Việc"
+                decoration-info="trang_thai == 'hoan_thanh'"
+                decoration-success="trang_thai == 'hoan_thanh_xuat_sac'"
+                decoration-danger="trang_thai == 'chua_hoan_thanh'">
                 <field name="cong_viec_id"/>
-                <field name="ten_du_an"/>
+                <field name="du_an_id"/> 
+                <field name="nhan_vien_ids" widget="many2many_tags"/>
                 <field name="ngay_thuc_hien"/>
-                <field name="nhan_vien_id"/>  
                 <field name="thoi_gian"/>
-                <field name="mo_ta"/>
+                <field name="trang_thai"/>
             </tree>
+            <!-- <notebook>
+                <page string="Đánh Giá Nhân Viên">
+                    <field name="danh_gia_nhan_vien_ids">
+                    <tree editable="bottom">
+                        <field name="nhan_vien_id" domain="[('id', 'in', parent.nhan_vien_ids)]"/>
+                        <field name="diem_so"/>
+                        <field name="nhan_xet"/>
+                        <field name="ngay_danh_gia"/>
+                    </tree>
+                    </field>
+                </page>
+            </notebook> -->
         </field>
     </record>
-
-    <!-- Form View cho Nhật Ký Công Việc -->
+    
     <record id="view_nhat_ky_form" model="ir.ui.view">
         <field name="name">nhatkycongviec.form</field>
         <field name="model">nhat_ky_cong_viec</field>
         <field name="arch" type="xml">
             <form string="Nhật Ký Công Việc">
                 <sheet>
-                    <group>
+                    <group col="4">
                         <field name="cong_viec_id"/>
-                        <field name="ten_du_an"/>
+                        <field name="du_an_id"/> 
+                        <field name="nhan_vien_ids" widget="many2many_tags"/>
                         <field name="ngay_thuc_hien"/>
-                        <field name="nhan_vien_id"/>  
                         <field name="thoi_gian"/>
-                        <field name="mo_ta"/>
+                        <field name="trang_thai"/>
                     </group>
                 </sheet>
             </form>
         </field>
     </record>
 
-    <!-- Search View cho Nhật Ký Công Việc -->
     <record id="view_nhat_ky_search" model="ir.ui.view">
         <field name="name">nhatkycongviec.search</field>
         <field name="model">nhat_ky_cong_viec</field>
         <field name="arch" type="xml">
             <search>
                 <field name="cong_viec_id"/>
-                <field name="nhan_vien_id"/>
                 <field name="ngay_thuc_hien"/>
             </search>
             <searchpanel>
                 <field name="du_an_id" select="multi"/>
-                <field name="nhan_vien_id" select="multi"/>
             </searchpanel>
         </field>
     </record>
 
-    <!-- Action cho Nhật Ký Công Việc -->
     <record id="action_nhat_ky" model="ir.actions.act_window">
         <field name="name">Nhật Ký Công Việc</field>
         <field name="res_model">nhat_ky_cong_viec</field>

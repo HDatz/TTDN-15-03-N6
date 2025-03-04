@@ -1,0 +1,39 @@
+<odoo>
+    <!-- Danh sách phòng ban -->
+    <record id="view_phong_ban_tree" model="ir.ui.view">
+        <field name="name">phong.ban.tree</field>
+        <field name="model">phong.ban</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ma_phong_ban"/>
+                <field name="ten_phong_ban"/>
+                <field name="nhan_vien_ids"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Biểu mẫu phòng ban -->
+    <record id="view_phong_ban_form" model="ir.ui.view">
+        <field name="name">phong.ban.form</field>
+        <field name="model">phong.ban</field>
+        <field name="arch" type="xml">
+            <form string="Phòng Ban">
+                <sheet>
+                    <group>
+                        <field name="ma_phong_ban"/>
+                        <field name="ten_phong_ban"/>
+                        <field name="nhan_vien_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Hành động mở danh sách phòng ban -->
+    <record id="action_phong_ban" model="ir.actions.act_window">
+        <field name="name">Quản lý Phòng Ban</field>
+        <field name="res_model">phong.ban</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+</odoo>

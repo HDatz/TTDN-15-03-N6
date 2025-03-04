@@ -1,34 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Tree View cho Dự Án -->
     <record id="view_du_an_tree" model="ir.ui.view">
         <field name="name">du_an.tree</field>
         <field name="model">du_an</field>
         <field name="arch" type="xml">
-            <tree string="Dự Án">
+            <tree string="Dự Án" 
+                decoration-info="tien_do_du_an == 'chua_bat_dau'"
+                decoration-success="tien_do_du_an == 'dang_thuc_hien'"
+                decoration-muted="tien_do_du_an == 'hoan_thanh'"
+                decoration-danger="tien_do_du_an == 'tam_dung'">
                 <field name="ten_du_an"/>
-                <field name="mo_ta"/>
+                <field name="nguoi_phu_trach_id"/>
+                <field name="nhan_vien_ids" widget="many2many_tags"/>
+                <field name="tien_do_du_an"/>
             </tree>
         </field>
     </record>
 
-    <!-- Form View cho Dự Án -->
     <record id="view_du_an_form" model="ir.ui.view">
         <field name="name">du_an.form</field>
         <field name="model">du_an</field>
         <field name="arch" type="xml">
             <form string="Dự Án">
                 <sheet>
-                    <group>
+                    <group col="4">
                         <field name="ten_du_an"/>
                         <field name="mo_ta"/>
+                        <field name="tien_do_du_an"/>
+                        <field name="nguoi_phu_trach_id"/>
+                        <field name="nhan_vien_ids" widget="many2many_tags"/>
                     </group>
                     <notebook>
                         <page string="Công Việc">
-                            <field name="cong_viec_ids"/>
+                            <field name="cong_viec_ids">
+                                <tree editable="bottom">
+                                    <field name="ten_cong_viec"/>
+                                    <field name="thoi_gian_con_lai"/>
+                                </tree>
+                            </field>
                         </page>
                         <page string="Nhật Ký Công Việc">
-                            <field name="nhat_ky_cong_viec_ids"/>
+                            <field name="nhat_ky_cong_viec_ids">
+                                <tree editable="bottom">
+                                    <field name="trang_thai"/>
+                                    <field name="ngay_thuc_hien"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Tài Nguyên">
+                            <field name="tai_nguyen_ids">
+                                <tree editable="bottom">
+                                    <field name="ten_tai_nguyen"/>
+                                    <field name="so_luong"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Đánh Giá Nhân Viên">
+                            <field name="danh_gia_nhan_vien_ids">
+                                <tree>
+                                    <!-- <field name"du_an_id" string="Dự án"/> -->
+                                    <field name="cong_viec_id" string="Tên Công Việc"/>
+                                    <field name="nhan_vien_id" string="Nhân Viên" domain="[('id', 'in', parent.nhan_vien_ids)]"/>
+                                    <field name="diem_so" string="Điểm Số"/>
+                                    <field name="nhan_xet" string="Nhận Xét"/>
+                                    <field name="ngay_danh_gia" string="Ngày Đánh Giá"/>
+                                </tree>
+                            </field>
                         </page>
                     </notebook>
                 </sheet>
@@ -36,7 +73,6 @@
         </field>
     </record>
 
-    <!-- Action cho Dự Án -->
     <record id="action_du_an" model="ir.actions.act_window">
         <field name="name">Dự Án</field>
         <field name="res_model">du_an</field>
