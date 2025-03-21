@@ -35,10 +35,10 @@
             <search>
                 <field name="ten_tai_nguyen"/>
                 <field name="du_an_id"/>
-            </search>
-            <searchpanel>
-                <field name="du_an_id" select="multi"/>
-            </searchpanel>
+                <searchpanel>
+                    <field name="du_an_id" select="multi"/>
+                </searchpanel>
+             </search>
         </field>
     </record>
 
@@ -46,6 +46,6 @@
         <field name="name">Tài Nguyên Dự Án</field>
         <field name="res_model">tai_nguyen</field>
         <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="view_tai_nguyen_search"/>
+        <!-- <field name="search_view_id" ref="view_tai_nguyen_search"/> -->
     </record>
 </odoo>

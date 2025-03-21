@@ -32,6 +32,8 @@
             </tree>
         </field>
     </record>
+
+
     <record id="view_danh_gia_nhan_vien_search" model="ir.ui.view">
         <field name="name">danh.gia.nhan.vien.search</field>
         <field name="model">danh_gia_nhan_vien</field>
@@ -42,11 +44,11 @@
                 <field name="du_an_id"/>
                 <field name="diem_so"/>
                 <field name="ngay_danh_gia"/>
+                <searchpanel>
+                    <field name="du_an_id" string="Dự Án" select="multi"/>
+                    <field name="nhan_vien_id" string="Nhân Viên" select="multi"/>
+                </searchpanel>
             </search>
-            <searchpanel>
-                <field name="du_an_id" string="Dự Án" select="multi"/>
-                <field name="nhan_vien_id" string="Nhân Viên" select="multi"/>
-            </searchpanel>
         </field>
     </record>
     <record id="action_danh_gia_nhan_vien" model="ir.actions.act_window">

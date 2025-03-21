@@ -25,6 +25,7 @@
     # always loaded
     'data': [
         'security/ir.model.access.csv',
+        'views/dashboard_view.xml',
         'views/du_an_view.xml',
         'views/giai_doan_cong_viec_view.xml',
         'views/cong_viec_view.xml',
@@ -39,4 +40,10 @@
     ],
     
     'icon': '/quan_ly_cong_viec/static/description/image.png',
+    
+    'assets': {
+        'web.assets_backend': [
+            '/quan_ly_cong_viec/static/css/dashboard.css',
+        ],
+    },
 }

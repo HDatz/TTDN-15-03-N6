@@ -12,8 +12,9 @@
                 <field name="du_an_id"/> 
                 <field name="nhan_vien_ids" widget="many2many_tags"/>
                 <field name="ngay_thuc_hien"/>
-                <field name="thoi_gian"/>
+                <field name="muc_do"/>
                 <field name="trang_thai"/>
+                <field name="giai_doan_id" string="Giai Đoạn"/>
             </tree>
             <!-- <notebook>
                 <page string="Đánh Giá Nhân Viên">
@@ -41,8 +42,9 @@
                         <field name="du_an_id"/> 
                         <field name="nhan_vien_ids" widget="many2many_tags"/>
                         <field name="ngay_thuc_hien"/>
-                        <field name="thoi_gian"/>
+                        <field name="muc_do"/>
                         <field name="trang_thai"/>
+                        <field name="giai_doan_id" string="Giai Đoạn"/>
                     </group>
                 </sheet>
             </form>
@@ -56,10 +58,10 @@
             <search>
                 <field name="cong_viec_id"/>
                 <field name="ngay_thuc_hien"/>
+                <searchpanel>
+                    <field name="du_an_id" select="multi"/>
+                </searchpanel>
             </search>
-            <searchpanel>
-                <field name="du_an_id" select="multi"/>
-            </searchpanel>
         </field>
     </record>
 

@@ -9,7 +9,7 @@ class DuAn(models.Model):
 
     ten_du_an = fields.Char(string='Tên Dự Án', required=True)
     mo_ta = fields.Text(string='Mô Tả')
-    tien_do_du_an = fields.Float(string="Tiến Độ Dự Án (%)", compute="_compute_tien_do", store=True)
+    # tien_do_du_an = fields.Float(string="Tiến Độ Dự Án (%)", compute="_compute_tien_do", store=True)
     
     nguoi_phu_trach_id = fields.Many2one('nhan_vien', string='Người Phụ Trách', ondelete='set null')
 
@@ -72,3 +72,12 @@ class DuAn(models.Model):
                 vals['nhan_vien_ids'] = [(6, 0, list(nhan_vien_list))]
 
         return super(DuAn, self).write(vals)
+    
+    @api.depends('cong_viec_ids.phan_tram_cong_viec')
+    def _compute_phan_tram_du_an(self):
+        for record in self:
+            if record.cong_viec_ids:
+                total_progress = sum(record.cong_viec_ids.mapped('phan_tram_cong_viec'))
+                record.phan_tram_du_an = total_progress / len(record.cong_viec_ids)
+            else:
+                record.phan_tram_du_an = 0.0

@@ -57,7 +57,7 @@
         </field>
     </record>
 
-    <record id="view_nhan_vien_search" model="ir.ui.view">
+   <record id="view_nhan_vien_search" model="ir.ui.view">
         <field name="name">view.nhan.vien.search</field>
         <field name="model">nhan_vien</field>
         <field name="arch" type="xml">
@@ -65,17 +65,16 @@
                 <field name="ma_dinh_danh"/>
                 <field name="ho_va_ten"/>
                 <field name="email"/>
-                <field name="chuc_vu_id"/>
                 <field name="so_dien_thoai"/>
-                <field name="nhom_du_an_ids"/>
+                <searchpanel>
+                    <field name="chuc_vu_id" select="multi"/>
+                    <field name="nhom_du_an_ids" select="multi"/>
+                </searchpanel>
             </search>
-            <searchpanel>
-                <field name="chuc_vu_id" select="multi"/>
-                <field name="gioi_tinh" select="single"/>
-                <field name="nhom_du_an_ids" select="multi"/>
-            </searchpanel>
         </field>
     </record>
+
+
 
     <record id="action_nhan_vien" model="ir.actions.act_window">
         <field name="name">Nhân Viên</field>

@@ -10,7 +10,8 @@
                 <field name="nhan_vien_ids" widget="many2many_tags" />
                 <field name="han_chot" string="Hạn Chót" widget="datetime"/>
                 <field name="giai_doan_id" string="Giai Đoạn"/>
-                <field name="thoi_gian_con_lai" string="Trạng Thái"/>
+                <field name="phan_tram_cong_viec" widget="progressbar"/>
+                <field name="thoi_gian_con_lai" string="Ngày Còn"/>
             </tree>
         </field>
     </record>
@@ -27,7 +28,8 @@
                         <field name="nhan_vien_ids" widget="many2many_tags"/>
                         <field name="han_chot" string="Hạn Chót" widget="datetime"/>
                         <field name="giai_doan_id" string="Giai Đoạn"/>
-                        <field name="thoi_gian_con_lai" string="Trạng Thái"/> 
+                        <field name="phan_tram_cong_viec" widget="progressbar"/>
+                        <field name="thoi_gian_con_lai" string="Ngày Còn"/> 
                     </group>
                     <group>
                         <field name="mo_ta" string="Mô Tả Công Việc" colspan="2" widget="html"/>
@@ -38,11 +40,11 @@
                                 <tree string="Nhật Ký Công Việc">
                                     <field name="nhan_vien_ids" string="Tên Nhân Viên" widget="many2many_tags"/>
                                     <field name="ngay_thuc_hien" string="Ngày Thực Hiện"/>
-                                    <field name="thoi_gian" string="Thời Gian"/>
-                                    <field name="trang_thai" string="Mô Tả"/>
+                                    <field name="muc_do" string="Mức Độ Hoàn Thành"/>
                                 </tree>
                             </field>
                         </page>
+
                         <page string="Đánh Giá Nhân Viên">
                             <field name="danh_gia_nhan_vien_ids" mode="tree">
                             <tree>
@@ -63,13 +65,13 @@
         <field name="name">cong_viec.search</field>
         <field name="model">cong_viec</field>
         <field name="arch" type="xml">
-        <search string="Tìm Kiếm Công Việc">
-            <field name="ten_cong_viec" string="Tên Công Việc"/>
-        </search>
-        <searchpanel>
-            <field name="du_an_id" string="Dự Án" select="multi"/>
-            <field name="giai_doan_id" string="Giai Đoạn" select="multi"/>
-        </searchpanel>
+            <search string="Tìm Kiếm Công Việc">
+                <field name="ten_cong_viec" string="Tên Công Việc"/>
+                <searchpanel>
+                    <field name="du_an_id" string="Dự Án" select="multi"/>
+                    <field name="giai_doan_id" string="Giai Đoạn" select="multi"/>
+                </searchpanel>
+            </search>
         </field>
     </record>
 
@@ -77,5 +79,6 @@
         <field name="name">Công Việc Của Nhân Viên</field>
         <field name="res_model">cong_viec</field>
         <field name="view_mode">tree,form</field>
+        <field name="search_view_id" ref="view_cong_viec_search"/>
     </record>
 </odoo>

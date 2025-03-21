@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <!-- Tree View cho Nhóm Dự Án -->
     <record id="view_nhom_du_an_tree" model="ir.ui.view">
         <field name="name">view.nhom.du.an.tree</field>
         <field name="model">nhom_du_an</field>
@@ -12,14 +11,13 @@
         </field>
     </record>
 
-    <!-- Form View cho Nhóm Dự Án -->
     <record id="view_nhom_du_an_form" model="ir.ui.view">
         <field name="name">view.nhom.du.an.form</field>
         <field name="model">nhom_du_an</field>
         <field name="arch" type="xml">
             <form string="Các Nhóm">
                 <sheet>
-                    <group>
+                    <group col="4">
                         <field name="ten_nhom"/>
                         <field name="nhan_vien_ids" widget="many2many_tags"/>  <!-- Đã sửa cho khớp -->
                     </group>

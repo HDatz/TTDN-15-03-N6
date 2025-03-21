@@ -12,8 +12,6 @@ class DanhGiaNhanVien(models.Model):
     nhan_xet = fields.Text(string='Nhận Xét')
     ngay_danh_gia = fields.Datetime(string='Ngày Đánh Giá', default=fields.Datetime.now, required=True)
     
-    # nhat_ky_cong_viec_id = fields.Many2one('nhat_ky_cong_viec', string='Nhật Ký Công Việc', ondelete='cascade')
-
     
     @api.onchange('cong_viec_id')
     def _onchange_cong_viec_id(self):
@@ -46,3 +44,11 @@ class DanhGiaNhanVien(models.Model):
                 raise ValidationError("Nhân viên này không tham gia dự án đã chọn.")
         
         return super(DanhGiaNhanVien, self).create(vals)
+    
+    @api.constrains('nhan_vien_id')
+    def _check_nhan_vien_trong_du_an(self):
+        for record in self:
+            if record.du_an_id:
+                nhan_vien_du_an_ids = record.du_an_id.nhan_vien_ids.ids
+                if record.nhan_vien_id.id not in nhan_vien_du_an_ids:
+                    raise ValidationError(f"Nhân viên {record.nhan_vien_id.display_name} không thuộc dự án này.")
