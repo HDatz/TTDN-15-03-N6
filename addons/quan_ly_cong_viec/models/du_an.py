@@ -18,6 +18,9 @@ class DuAn(models.Model):
     tai_nguyen_ids = fields.One2many('tai_nguyen', 'du_an_id', string='Danh Sách Tài Nguyên')
 
     cong_viec_ids = fields.One2many('cong_viec', 'du_an_id', string='Công Việc')
+        
+    dashboard_id = fields.Many2one('dashboard', string="Dashboard")
+
     
     danh_gia_nhan_vien_ids = fields.One2many('danh_gia_nhan_vien', 'du_an_id', string='Đánh Giá Nhân Viên')
     tien_do_du_an = fields.Selection([

@@ -42,6 +42,7 @@
 .green { border-top: 4px solid #2E7D32; }
 .brown { border-top: 4px solid #5D4037; }
 .red { border-top: 4px solid #C62828; }
+.yellow { border-top: 4px solid #F9A825; }
 
 /* Khối ngang như "Giá trị tài sản" hoặc "Thống kê mượn trả" */
 .wide-card {
@@ -69,6 +70,3 @@
     font-weight: bold;
 }
 
-.o_form_view .o_form_statusbar {
-    display: none !important;
-}

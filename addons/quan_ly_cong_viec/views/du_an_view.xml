@@ -95,6 +95,5 @@
         <field name="name">Dự Án</field>
         <field name="res_model">du_an</field>
         <field name="view_mode">tree,form,graph</field>
-        <!-- <field name="view_id" ref="view_du_an_graph_dashboard"/> -->
     </record>
 </odoo>
